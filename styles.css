@@ -26,9 +26,14 @@ header {
 }
 
 h3 {
+  font-size: 25px;
+  color: white;
+}
+
+h2 {
   padding-top: 75px;
   font-size: 17px;
-  color: white;
+  color: black;
 }
 
 .message-text {
@@ -69,6 +74,32 @@ h3 {
   padding-bottom: 75px;
   border-radius: 5px;
   margin: 100px;
+}
+
+.box-three {
+  background-color: #ffffff;
+  height: 30px;
+  width: 700px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  border-radius: 5px;
+  text-align: center;
+  margin: auto;
+}
+
+.add-your-own-button {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #134d71;
+  border-radius: 5px;
+  color: white;
+  height: 30px;
+  width: 150px;
+  margin: center;
+  background: linear-gradient(#f7e4bf, #134d71, #134d71);
+}
+
+.form {
+  margin-bottom:
 }
 
 .pop-up-message {

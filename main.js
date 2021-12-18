@@ -41,10 +41,14 @@ var message = document.querySelector(".random-message");
 var radioAffirmation = document.querySelector("#affirmation-choice");
 var mantraAffirmation = document.querySelector("#mantra-choice");
 var messageText = document.querySelector(".message-text");
-
+var userAffirmation = document.querySelector(."affirmation-choice");
+var userMantra = document.querySelector(".mantra-choice");
+var addYourOwnButton = document.querySelector(".add-own-button");
+var form = document.querySelector(".form");
 
 // EVENT LISTENERS GO HERE
 receiveButton.addEventListener('click', sendMessage);
+addYourOwnButton.addEventListener('click', showForm);
 
 
 // FUNCTIONS GO HERE
@@ -65,3 +69,34 @@ function displayMessage() {
   buddha.classList.add("hidden");
   message.classList.remove("hidden");
 }
+
+// Add an Add Message button in a logical spot
+// add Add Message button under box two
+
+// When user clicks button, a form will appear
+// There should be two inputs, one to specify aff or mantra (radio button)
+// Another to add the text of the message itself (check out code pen for input button)
+// Should contain a submit button (add Submit Button under radio button)
+
+// When user clicks on Submit button, the message is added to the appropriate array of messages
+// (.push to aff array or .push to mantra array)
+
+function pushNewMessage {
+  if (userAffirmation.checked) {
+  // push message to affirmation array
+  // display user message function
+  }
+}
+
+function displayUserMessage {
+  //hide the button
+  // show message
+}
+
+function showForm {
+  addYourOwnButton.classList.add("hidden");
+  form.classList.remove("hidden");
+}
+// When a message is added, that message should be displayed in the message box (box two), instead of buddha (hide buddha)
+
+// Be sure to match the styling of existing elements
