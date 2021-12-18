@@ -1,7 +1,6 @@
 
-
 var mantras = [
-  "Breathing in, I send myself love. Breathing out, I send love to someone else who needs it."
+  "Breathing in, I send myself love. Breathing out, I send love to someone else who needs it.",
   "Don’t let yesterday take up too much of today.",
   "Every day is a second chance.",
   "Tell the truth and love everyone.",
@@ -34,36 +33,35 @@ var affirmations = [
   "I manifest perfect health by making smart choices.",
 ];
 
-// function getRandomAffirmation(array) {
-//   return Math.floor(Math.random() * affirmations.length);
-// }
-//
-// function getRandomMantra(array) {
-//   return Math.floor(Math.random() * mantras.length);
-// }
 
+// VARIABLES GO HERE
+var buddha = document.querySelector(".buddha-image");
+var receiveButton = document.querySelector(".receive-message-button");
+var message = document.querySelector(".random-message");
+var radioAffirmation = document.querySelector("#affirmation-choice");
+var mantraAffirmation = document.querySelector("#mantra-choice");
+var messageText = document.querySelector(".message-text");
+
+
+// EVENT LISTENERS GO HERE
+receiveButton.addEventListener('click', sendMessage);
+
+
+// FUNCTIONS GO HERE
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
 
-// var affirmationSelection = document.querySelector('affirmation');
-// var mantraSelection = document.querySelector('mantra');
-var buddha = document.querySelector('buddha-image');
-var receiveButton = document.querySelector('receive-message-button')
+function sendMessage() {
+  displayMessage();
+  if (radioAffirmation.checked) {
+  messageText.innerText = affirmations[getRandomIndex(affirmations)];
+} else if (mantraAffirmation.checked) {
+  messageText.innerText = mantras[getRandomIndex(mantras)];
+      }
+    }
 
-
-yogaGuy.addEventListener()
-
-
-
-function hideBuddha() {
-  buddha.classList.add('hidden');
+function displayMessage() {
+  buddha.classList.add("hidden");
+  message.classList.remove("hidden");
 }
-
-
-receiveMessageButton.eventListener('click', sendMessage);
-
-randomAffirmation = getRandomIndex(affirmations);
-randomMantra = getRandomIndex(mantras);
-
-function sendMessage() {}
