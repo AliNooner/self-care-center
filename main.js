@@ -38,8 +38,8 @@ var affirmations = [
 var buddha = document.querySelector(".buddha-image");
 var receiveButton = document.querySelector(".receive-message-button");
 var message = document.querySelector(".random-message");
-var radioAffirmation = document.getElementById("#affirmation-choice");
-var mantraAffirmation = document.getElementById("#mantra-choice");
+var radioAffirmation = document.querySelector("#affirmation-choice");
+var mantraAffirmation = document.querySelector("#mantra-choice");
 var messageText = document.querySelector(".message-text");
 var userAffirmation = document.querySelector("#user-aff-choice");
 var userMantra = document.querySelector("#user-mantra-choice");
@@ -49,10 +49,10 @@ var userInput = document.querySelector(".user-input");
 var submitButton = document.querySelector(".submit-button");
 var userMessageLine = document.querySelector(".user-message-line");
 
+
 // EVENT LISTENERS GO HERE
 receiveButton.addEventListener('click', sendMessage);
 addYourOwnButton.addEventListener('click', showForm);
-// When user clicks submit, push to array and display message
 submitButton.addEventListener('click', pushNewMessage);
 
 
@@ -61,21 +61,22 @@ function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
 
+
 function sendMessage() {
   displayMessage();
   if (radioAffirmation.checked) {
-  messageText.innerText = affirmations[getRandomIndex(affirmations)];
-} else if (mantraAffirmation.checked) {
-  messageText.innerText = mantras[getRandomIndex(mantras)];
-      }
+    messageText.innerText = affirmations[getRandomIndex(affirmations)];
+  } else if (mantraAffirmation.checked) {
+    messageText.innerText = mantras[getRandomIndex(mantras)];
     }
+}
+
 
 function displayMessage() {
   buddha.classList.add("hidden");
   message.classList.remove("hidden");
 }
 
-// When user clicks on Submit button, the message is added to the appropriate array of messages
 function pushNewMessage() {
   displayUserMessage()
   if (userAffirmation.checked) {
@@ -92,22 +93,11 @@ function displayUserMessage() {
   form.classList.add("hidden");
   addYourOwnButton.classList.add("hidden");
   userMessageLine.classList.remove("hidden");
-  // show message return userInput
   userMessageLine.innerText = userInput.value;
 }
 
-
-
-// When user clicks button, a form will appear
-// There should be two inputs, one to specify aff or mantra (radio button)
-// Another to add the text of the message itself (check out code pen for input button)
-// Should contain a submit button (add Submit Button under radio button)
 
 function showForm() {
   addYourOwnButton.classList.add("hidden");
   form.classList.remove("hidden");
 }
-
-// When a message is added, that message should be displayed in the message box (box two), instead of buddha (hide buddha)
-
-// Be sure to match the styling of existing elements
